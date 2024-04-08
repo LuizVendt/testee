@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #e0fded;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 20px; /* Espaçamento abaixo dos botões */
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative; /* Adicionado para permitir posicionamento absoluto */
+            margin: 0 10px; /* Espaçamento entre os botões */
+        }
+
+        .btn:hover {
+            transform: translateY(-3px); /* Efeito visual de levantar ligeiramente o botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <h1>Papai me faz um pix??</h1> <!-- Frase adicionada -->
+    <div class="container">
+        <img src="urso.png" alt="Imagem"> <br><!-- Imagem adicionada -->
+        <a href="pag002.html">
+            <button class="btn">Sim</button>
+        </a>
+        <button class="btn" id="noButton" onmouseover="moveButton()">Não</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            var button = document.getElementById('noButton');
+            var maxX = window.innerWidth / 2.5; // Limite de largura
+            var maxY = window.innerHeight / 2.5; // Limite de altura
+            var x = Math.random() * maxX;
+            var y = Math.random() * maxY;
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
